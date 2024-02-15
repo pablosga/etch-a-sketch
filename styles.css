@@ -18,8 +18,8 @@ div {
 }
 
 #main-container {
-    height: fit-content;
-    width: fit-content;
+    height: 500px;
+    width: 500px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -33,11 +33,12 @@ div {
 }
 
 .fila {
-    height: 20px;
     display: flex;
+    flex-grow: 1;
+    width: 100%
 }
 
-.cuadrado {
-    height: 100%;   
-    width: 20px;
+.cuadrado {   
+    display: flex;
+    flex-grow: 1;
 }
