@@ -14,7 +14,10 @@ function createGrid(pixelsNumber) {
             cuadrado.setAttribute("class", "cuadrado");
             nuevaFila.appendChild(cuadrado);
         }
-    }    
+    }
+    if (bordes.checked) eliminarBordes()
+    else agregarBordes()
+
     let cuadraditos = Array.from(document.querySelectorAll(".cuadrado"));
     cuadraditos.forEach((cuadradito) => cuadradito.addEventListener("mouseover", function(e) {
         if (bordes.checked) {
