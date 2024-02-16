@@ -10,7 +10,10 @@ body {
 
 h1 {
     text-align: center;
-    color: #0f0f0f;
+    color: #eaeaea;
+    background-color: #222222;
+    margin: 0px 0px 20px;
+    padding: 30px;
 }
 
 div {
@@ -30,10 +33,30 @@ div {
 }
 
 #menu {
+    background-color: #222222;
     text-align: center;
     margin: 20px;
     border: none;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0px 0px;
+}
 
+.hijitos {
+    font-size: 20px;
+    font-weight: 700;
+    color:#eaeaea;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border: none;
+}
+
+input {
+    border: 2.5px #1f1f1f solid;
+    border-radius: 0.5em;
 }
 
 .fila {
@@ -49,3 +72,4 @@ div {
     border: 1px solid #1f1f1f;
     border-collapse: collapse;
 }
+
