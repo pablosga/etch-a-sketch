@@ -1,6 +1,7 @@
 let input = document.querySelector("input"); 
 let mainContainer = document.querySelector("#main-container");
 
+
 function createGrid(pixelsNumber) {
     let elementsToDelete = document.querySelectorAll(".fila");
     elementsToDelete.forEach((element) => element.remove());
@@ -13,15 +14,37 @@ function createGrid(pixelsNumber) {
             cuadrado.setAttribute("class", "cuadrado");
             nuevaFila.appendChild(cuadrado);
         }
+    }    
     let cuadraditos = Array.from(document.querySelectorAll(".cuadrado"));
-    cuadraditos.forEach((cuadradito) => 
-    cuadradito.addEventListener("mouseover", (e) => 
-    e.toElement.setAttribute("style","background-color: white")))
-    }
+    cuadraditos.forEach((cuadradito) => cuadradito.addEventListener("mouseover", function(e) {
+        if (bordes.checked) {
+            e.toElement.style.backgroundColor = "white";
+            e.toElement.style.border = "0.666667px solid transparent";
+        } else {
+            e.toElement.style.backgroundColor = "white";
+            e.toElement.style.border = "0.666667px solid rgb(31, 31, 31)";
+        }
+    }))
+}
+    
+
+let bordes = document.querySelector("#bordes")
+bordes.addEventListener("change", function() {
+    if (this.checked) eliminarBordes()
+    else agregarBordes()
+}) 
+
+
+function eliminarBordes() {
+    let cuadriculas = Array.from(document.querySelectorAll(".cuadrado"));
+    cuadriculas.forEach((cuadro) => cuadro.style.border = "0.666667px solid transparent");
+}
+
+function agregarBordes() {
+    let cuadriculas = Array.from(document.querySelectorAll(".cuadrado"));
+    cuadriculas.forEach((cuadro) => cuadro.style.border = "0.666667px solid rgb(31, 31, 31)");
 }
 
 createGrid(16);
+
 input.addEventListener("input", () => createGrid(input.value));
-
-
-
