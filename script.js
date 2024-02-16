@@ -82,12 +82,12 @@ function checkeadorBotones(id) {
 }
 
 
-
-
-
 function actualColor() {
+    if (checkeadorBotones("#borrador")) return "rgb(47, 47, 47)"
+    else {
     if (checkeadorBotones("#random")) return randomColor()
     else return "white"
+    }
 }
 
 
